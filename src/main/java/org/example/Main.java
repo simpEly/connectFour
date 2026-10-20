@@ -8,20 +8,15 @@ public class Main {
        System.out.println("Welcome to connect four!");
        System.out.println("Board size " + column + " comlumns x " + row + " rows");
        System.out.println("Game mod: Player vs Player");
-        Board board = new Board();
-        for (int j = 0; j <4; j++){
-            for (int k = 0; k <3-j; k++){
-                board.dropPiece(j,'0');
-            }
-            board.dropPiece(j,'X');
-        }
-        board.printBoard();
+       Board board = new Board();
+       Player p1 = new Human("khanh",'X');
+       Player p2 = new Human("kha",'O');
+       Gameplay game = new Gameplay(board,p1,p2);
+       game.start();
 
-        if(board.winCheck('X')) {
-            System.out.println("You win!");
         }
 
 
    }
 
-}
+

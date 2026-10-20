@@ -39,11 +39,12 @@ public class Board {
 
     public boolean dropPiece(int j, char symbol) {
         for (int i= row-1 ; i>=0; i--) {
+            if(j<0 || j>=column) return false;
             if (board[i][j] == ' ') {
                 board[i][j] = symbol;
                 return true;
             }
-            if(j<0 || j>=column) return false;
+
         }
         return false;
     }
@@ -86,8 +87,8 @@ public class Board {
                 }
             }
         }
-        for (int i = row-1; i >=3; i++) {
-            for (int j = 0; j < column-3; j++) {
+        for (int i = row-1; i >=3; i--) {
+            for (int j = 0; j < column-4; j++) {
                 if (
                         board[i][j] == symbol &&
                         board[i-1][j+1] == symbol &&

@@ -17,6 +17,10 @@ public class Human extends Player {
             int choice = sc.nextInt();
             choice-=1;
             sc.nextLine();
+            if (choice < 0 || choice > 6) {
+                System.out.println("Please enter a number between 1 and 7");
+                continue;
+            }
             if(b.isValid(0,choice)) {
                 return choice;
             }
