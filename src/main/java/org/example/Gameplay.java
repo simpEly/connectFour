@@ -16,7 +16,7 @@ public class Gameplay {
     }
     public void start() {
         while (true) {
-            System.out.println("Choose the first player to play:\n"+"1. Player 1\n"+"2. Player 2");
+            System.out.println("Choose the first player to play:\n"+"1. Player1\n"+"2. Player2/Computer");
             if(!scan.hasNextInt()) {
                 System.out.println("Please enter a number");
                 scan.nextLine();
@@ -38,13 +38,16 @@ public class Gameplay {
         }
         while (true) {
             int col = currentPlayer.chooseColumn(board);
+            System.out.println("DEBUG symbol = [" + currentPlayer.getSymbol() + "]");
             if (!board.dropPiece(col, currentPlayer.getSymbol())) {
                 System.out.println("Dropping unsuccessfully");
                 continue;
             }
             board.printBoard();
+            System.out.println("------------------");
             if (board.winCheck(currentPlayer.getSymbol())) {
                 System.out.println(currentPlayer.getName() + " wins!");
+
                 break;
             }
             if (board.isFull()) {

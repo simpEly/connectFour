@@ -15,4 +15,5 @@ public abstract class Player {
         return symbol;
     }
     public abstract int chooseColumn(Board board);
+
 }

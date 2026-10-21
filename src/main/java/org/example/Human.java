@@ -5,10 +5,11 @@ public class Human extends Player {
     public Human(String name, char symbol) {
         super(name, symbol);
     }
+
     @Override
     public int chooseColumn(Board b) {
         while (true) {
-            System.out.println("Choose column: ");
+            System.out.println(getName()+" Choose column: ");
             if(!sc.hasNextInt()) {
                 sc.nextLine();
                 System.out.println("Please enter a number between 1 and 7");
